@@ -23,14 +23,20 @@ router.get('/users', function(req, res, next) {
     }
     return res.status(HttpStatus.NO_CONTENT).send();
 }).post('/users', function(req, res) {
-    let user = req.body;
-    users.push(user);
-    return res.status(HttpStatus.CREATED).send();
+    try {
+        let user = req.body;
+        users.push(user);
+        return res.status(HttpStatus.CREATED).send();
+    } catch (error) {
+        return res.status(HttpStatus.BAD_REQUEST).send();
+    }
 }).delete('/users/:id', function(req, res) {
     let id = req.params.id;
     for (let i = 0; i < users.length; i++) {
-        if (id == users[i].id)
+        if (id == users[i].id) {
+            users.splice(i, 1);
             return res.status(HttpStatus.OK).send();
+        }
     }
     return res.status(HttpStatus.BAD_REQUEST).send();
 });

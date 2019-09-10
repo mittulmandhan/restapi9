@@ -13,4 +13,4 @@ npm i http-status-codes --save
 -> To build and run application(application runs on port no. 3000 by default):
 npm start
 
-->
+-> Postman app is used as a rest client to create this application

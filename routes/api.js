@@ -32,7 +32,7 @@ router.get('/users', function(req, res, next) {
     } catch (error) {
         return res.status(HttpStatus.BAD_REQUEST).send();
     }
-}).put('/users', function(req, res) {
+}).put('/users/:id', function(req, res) {
     try {
         let user = req.body;
         for (let i = 0; i < users.length; i++) {

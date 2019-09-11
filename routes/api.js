@@ -36,10 +36,10 @@ router.get('/users', function(req, res, next) {
     try {
         let user = req.body;
         for (let i = 0; i < users.length; i++) {
-            if (user[i].id === user.id) {
-                user[i].name = user.name;
-                user[i].address = user.address;
-                user[i].contact = user.contact;
+            if (users[i].id === user.id) {
+                users[i].name = user.name;
+                users[i].address = user.address;
+                users[i].contact = user.contact;
                 break;
             }
         }

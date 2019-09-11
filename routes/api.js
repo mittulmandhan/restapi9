@@ -36,7 +36,7 @@ router.get('/users', function(req, res, next) {
     try {
         let user = req.body;
         for (let i = 0; i < users.length; i++) {
-            if (users[i].id === user.id) {
+            if (users[i].id == user.id) {
                 users[i].name = user.name;
                 users[i].address = user.address;
                 users[i].contact = user.contact;
